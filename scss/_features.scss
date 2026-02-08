@@ -1,4 +1,35 @@
 .features{
     background-color: $color-grey-light-1;
     grid-column: center-start / center-end;
+
+    display: grid;
+    grid-template-columns: [features-start] repeat(3, [col-features-start] 1fr [col-features-end]) [features-end];
+    grid-gap: 2rem;
+
+    .feature{
+        background-color: $color-grey-light-2;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: [feature-start icon-start] 2rem [icon-end text-start] 1fr [text-end feature-end];
+        // grid-template-rows: [feature-top] min-content [feature-bottom];
+
+        &__icon{
+            fill: $color-primary;
+            grid-column: icon-start / icon-end;
+            /* grid-row: feature-top / feature-bottom; */
+        }
+        &__title{
+            font-family: $font-display;
+            font-size: 1.8rem;
+            color: $color-primary-dark;
+            grid-column: text-start / text-end;
+            /* grid-row: feature-top / feature-bottom; */
+        }
+        &__text{
+            font-family: $font-display;
+            color: $color-primary-dark;
+            grid-column: feature-start / feature-end;
+            /* grid-row: feature-top / feature-bottom; */
+        }
+    }
 }
