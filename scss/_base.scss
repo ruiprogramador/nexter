@@ -32,3 +32,27 @@ body {
     color: $color-grey-dark-2;
     background-color: $color-grey-light-1;
 }
+
+.container{
+    display: grid;
+    /*
+        80vh - 80% of the viewport height
+        min-content - the height of the content
+        40vw - 40% of the viewport width
+        repeat(3, min-content) - repeat 3 times the height of the content
+    */
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    /*
+        8rem - 8rem fixed width (Sidebar)
+        1fr - 1 fraction of the available space
+        repeat(8, minmax(min-content, 14rem)) - repeat 8 times the minimum content width and maximum 14rem
+    */
+    grid-template-columns: 
+        [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+        [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 
+        minmax(6rem, 1fr) [full-end];
+
+    > * {
+        padding: 2rem;
+    }
+}
