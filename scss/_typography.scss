@@ -1,0 +1,73 @@
+%heading-1{
+    font-family: $font-display;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    color: $color-primary-dark;
+}
+%heading-2{
+    font-family: $font-display;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    color: $color-primary-dark;
+}
+%heading-3{
+    font-family: $font-display;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: $color-primary-dark;
+}
+%heading-4{
+    font-family: $font-display;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: $color-primary-dark;
+}
+%heading-5{
+    font-family: $font-display;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $color-primary-dark;
+}
+%heading-6{
+    font-family: $font-display;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: $color-primary-dark;
+}
+%paragraph{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: $color-grey-dark-2;
+}
+
+h1{
+    @extend %heading-1;
+}
+
+h2{
+    @extend %heading-2;
+}
+
+h3{
+    @extend %heading-3;
+}
+h4{
+    @extend %heading-4;
+}
+h5{
+    @extend %heading-5;
+}
+h6{
+    @extend %heading-6;
+}
+p{
+    @extend %paragraph;
+}
+heading-primary{
+    @extend %heading-1;
+    color: $color-primary;
+}
+heading-secondary{
+    @extend %heading-2;
+    color: $color-primary;
+}
