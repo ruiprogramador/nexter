@@ -1,7 +1,7 @@
 {
-  "name": "flexbox_sass",
+  "name": "Nexter",
   "version": "1.0.0",
-  "description": "Landing page for flexbox_sass",
+  "description": "Landing page for Nexter",
   "main": "index.js",
   "scripts": {
     "watch:sass": "sass sass/main.scss css/style.css -w",
