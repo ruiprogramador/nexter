@@ -1,0 +1,15 @@
+.story{
+    background-color: $color-grey-light-2;
+    grid-column: full-start / full-end;
+    display: grid;
+    grid-template-columns: [story-start] repeat(8, [col-story-start] 1fr [col-story-end]) [story-end];
+
+    &__pictures{
+        background-color: $color-secondary;
+        grid-column: story-start / col-story-end 4;
+    }
+    &__content{
+        background-color: $color-grey-light-1;
+        grid-column: col-story-start 5 / story-end;
+    }
+}
