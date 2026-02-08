@@ -71,3 +71,21 @@ heading-secondary{
     @extend %heading-2;
     color: $color-primary;
 }
+
+.btn{
+    display: inline-block;
+    font-family: $font-display;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-primary;
+    border: $border-primary;
+    padding: 1rem 2rem;
+    transition: all 0.3s;
+
+    &:hover{
+        background-color: $color-primary;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 1rem 2rem rgba($color-primary, 0.2);
+    }
+}

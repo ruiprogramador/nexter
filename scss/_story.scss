@@ -2,14 +2,67 @@
     background-color: $color-grey-light-2;
     grid-column: full-start / full-end;
     display: grid;
-    grid-template-columns: [story-start] repeat(8, [col-story-start] 1fr [col-story-end]) [story-end];
+    grid-template-columns: [story-start] repeat(8, [col-story-start] minmax(0, 1fr) [col-story-end]) [story-end];
+    grid-template-rows: [row-story-start] repeat(6, [row-story-start] minmax(0, auto) [row-story-end]) [row-story-end];
 
     &__pictures{
         background-color: $color-secondary;
-        grid-column: story-start / col-story-end 4;
+        grid-column: 1 / span 4;
+        display: grid;
+        grid-template-columns: [picture-start] repeat(6, [pic-story-start] minmax(0, 1fr) [pic-story-end]) [picture-end];
+        grid-template-rows: [row-picture-start] repeat(6, [row-story-start] minmax(0, 1fr) [row-story-end]) [row-picture-end];
+        background-image: linear-gradient(rgba($color-primary, .5), rgba($color-primary, .5)) , url("img/back.jpg");
+
+        .story__img {
+            width: 100%;
+            /*padding-top: 66.66%;*/ // 3:2 aspect ratio (adjust if needed)
+            aspect-ratio: 3 / 2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &--1{
+                grid-row: 2 / 5;
+                grid-column: 2 / 5;
+                background-image: url("img/story-1.jpg");
+            }
+            &--2{
+                grid-row: 4 / 6;
+                grid-column: 4 / 7;
+                z-index: 20;
+                background-image: url("img/story-2.jpg");
+                margin-left: 4rem;
+            }
+        }
     }
     &__content{
         background-color: $color-grey-light-1;
-        grid-column: col-story-start 5 / story-end;
+        grid-column: 5 / -1;
+        display: grid;
+        grid-template-rows: repeat(3, auto) min-content;
+        align-content: center;       
+        padding: 6rem 8vw;
+        grid-gap: 1rem;
+
+        .heading-secondary{
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .heading-tertiary{
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: $color-secondary;
+            font-style: italic;
+        }
+
+        &__text{
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: $color-grey-dark-1;
+        }
+        .btn{
+            justify-self: center;
+        }
     }
 }
