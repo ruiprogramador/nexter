@@ -1,4 +1,140 @@
-footer.footer{
+.footer{
     background-color: $color-primary;
     grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    a:hover{
+        background-color: $color-secondary;
+        opacity: 0.5;
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
+    }
+
+    &__copyright{
+        color: #fff;
+        font-size: 1.4rem;
+        grid-column: 1 / -1;
+        align-self: center;
+        justify-self: center;
+        order: 2;
+    }
+
+    &__socials{
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-rows: repeat(4, 1fr);
+        justify-self: center;
+        align-items: center;
+
+        &__title{
+            font-size: 1.4rem;
+            color: #fff;
+            align-self: start;
+        }
+
+        &__icon{
+            text-align: center;
+            color: #fff;
+            i{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    &__company
+    , &__resources{
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-rows: repeat(4, 1fr);
+        justify-self: center;
+        align-items: start;
+
+        a{
+            color: #fff;
+            font-size: 1.4rem;
+            text-decoration: none;
+        }
+    }
+    &__legal{
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-rows: repeat(3, 1fr);
+        justify-self: center;
+        align-items: start;
+
+        a{
+            color: #fff;
+            font-size: 1.4rem;
+            text-decoration: none;
+        }
+    }
+    &__newsletter{
+        display: grid;
+        grid-template-rows: 1fr;
+        justify-self: center;
+        align-self: start;
+        grid-gap: 1rem;
+
+        &__title{
+            font-size: 1.4rem;
+        }
+
+        &__form{
+
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-gap: 1rem;
+
+            &__input{
+                padding: 0.5rem;
+                font-size: 1.4rem;
+                border: none;
+                border-radius: 100px;
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            &__button{
+                padding: 0.5rem 1rem;
+                font-size: 1.4rem;
+                background-color: $color-secondary;
+                color: #fff;
+                border: none;
+                border-radius: 100px;
+                cursor: pointer;
+                width: 50%;
+                margin: 0 auto;
+            }
+
+            &__button:hover{
+                background-color: $color-primary;
+                color: $color-grey-light-1;
+                border: 1px solid $color-grey-light-1;
+                opacity: 0.5;
+                transform: translateY(-2px);
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+    &__contact{
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-rows: repeat(3, 1fr);
+        justify-self: center;
+        align-items: start;
+
+        &__title{
+            text-align: center;
+        }
+
+        &__title
+        , &__email
+        , &__phone
+        , &__address
+        {
+            color: #fff;
+            font-size: 1.4rem;
+        }
+    }
 }
